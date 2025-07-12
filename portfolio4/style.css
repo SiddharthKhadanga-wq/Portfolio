@@ -1,0 +1,245 @@
+:root {
+    --primary: #6C3483;
+    --accent: #F4D03F;
+    --background: #FDF6E3;
+    --coral: #FF6F61;
+    --text: #2D2D34;
+    --white: #fff;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.header {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 2px 8px rgba(44, 52, 63, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.nav__brand h2 {
+    margin: 0;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav__menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.nav__link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+    margin-top: 2px;
+}
+
+.nav__link:hover::after {
+    width: 100%;
+}
+
+.nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.nav__toggle span {
+    width: 28px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+@media (max-width: 900px) {
+    .nav__menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        width: 220px;
+        padding: 2rem 1rem;
+        gap: 1.2rem;
+        box-shadow: 0 4px 24px rgba(44, 52, 63, 0.15);
+        display: none;
+    }
+    .nav__menu.active {
+        display: flex;
+    }
+    .nav__toggle {
+        display: flex;
+    }
+}
+
+.hero {
+    padding: 4rem 0 2rem 0;
+    background: linear-gradient(120deg, var(--primary) 0%, var(--coral) 100%);
+    color: var(--white);
+    text-align: center;
+}
+
+.hero__title {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.hero__subtitle {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+}
+
+.hero__description {
+    max-width: 540px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+}
+
+.btn {
+    padding: 0.7rem 1.7rem;
+    border-radius: 30px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn--primary {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.btn--primary:hover {
+    background: var(--coral);
+    color: var(--white);
+}
+
+.btn--outline {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn--outline:hover {
+    background: var(--coral);
+    color: var(--white);
+    border-color: var(--coral);
+}
+
+.section__title {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(44, 52, 63, 0.07);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+.projects__grid,
+.skills__grid,
+.awards__grid,
+.education__timeline {
+    display: grid;
+    gap: 2rem;
+}
+
+.projects__grid,
+.awards__grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.skills__grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.education__timeline {
+    grid-template-columns: 1fr;
+}
+
+.skill__tag {
+    display: inline-block;
+    background: var(--coral);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 0.3rem 0.9rem;
+    margin: 0.2rem 0.2rem 0 0;
+    font-size: 0.95rem;
+}
+
+.footer {
+    background: var(--primary);
+    color: var(--accent);
+    text-align: center;
+    padding: 1.2rem 0;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+
+.form-control,
+textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1.5px solid var(--primary);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.btn--full-width {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
